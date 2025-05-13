@@ -14,7 +14,6 @@ exports.login = async (req, res) => {
       return res.status(401).json({ error: 'Usuario no encontrado' });
     }
 
-    // Agrega estos logs para ver qué se está comparando
     console.log('🔍 Usuario encontrado:', email);
     console.log('🔐 Contraseña enviada:', password);
     console.log('🔐 Contraseña en BD:', user.password);

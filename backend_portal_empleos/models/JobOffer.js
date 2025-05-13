@@ -4,7 +4,7 @@ const sequelize = require('../config/database');
 const JobOffer = sequelize.define('JobOffer', {
   title: DataTypes.STRING,
   description: DataTypes.TEXT,
-  career: DataTypes.STRING, // Ingeniería, Contaduría, etc.
+  career: DataTypes.STRING, 
 });
 
 module.exports = JobOffer;

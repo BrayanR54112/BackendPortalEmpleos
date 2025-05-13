@@ -9,9 +9,9 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// ✅ Usar CORS para permitir conexiones desde el frontend
+//Cors para permitir conexion desde login
 app.use(cors({
-  origin: 'http://localhost:5173', // <-- Reemplaza con el puerto de tu React
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));

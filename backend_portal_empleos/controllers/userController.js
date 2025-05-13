@@ -16,19 +16,17 @@ exports.register = async (req, res) => {
   console.log('🔑 password recibido:', password);
 
   try {
-    // Validar que no exista un usuario con el mismo email
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       return res.status(400).json({ error: 'El correo ya está registrado' });
     }
 
-    // Hashear la contraseña
+    //Hash
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
     console.log('🔐 password hasheado:', hashedPassword);
 
-    // Crear el usuario
-    const user = await User.create({
+   const user = await User.create({
       username,
       email,
       password: hashedPassword,
