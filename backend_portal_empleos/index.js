@@ -5,7 +5,7 @@ const sequelize = require('./config/database');
 const userRoutes = require('./routes/users');
 const offerRoutes = require('./routes/offers');
 const authRoutes = require('./routes/auth');
-
+const Offer = require('./models/Offer');
 const app = express();
 const port = process.env.PORT || 3000;
 
