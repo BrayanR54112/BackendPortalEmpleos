@@ -8,6 +8,11 @@ const User = sequelize.define('User', {
     unique: true,
   },
   password: DataTypes.STRING,
+  role: { 
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: 'user', 
+  },
 });
 
 module.exports = User;

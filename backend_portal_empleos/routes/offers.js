@@ -4,7 +4,7 @@ const verifyToken = require('../middlewares/verifyToken');
 const Offer = require('../models/Offer');
 
 // Crear oferta protegida
-router.post('/create', verifyToken, async (req, res) => {
+router.post('/create', verifyToken('admin'), async (req, res) => {
   const { title, description, career } = req.body;
 
   try {
